@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccess.Migrations
 {
@@ -28,7 +27,7 @@ namespace DataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BrandId = table.Column<int>(nullable: false),
                     ColorId = table.Column<int>(nullable: false),
-                    ModelYear = table.Column<DateTime>(nullable: false),
+                    ModelYear = table.Column<int>(nullable: false),
                     DailyPrice = table.Column<decimal>(nullable: false),
                     Description = table.Column<string>(nullable: true)
                 },
