@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Core.DataAccess
 {
-    public interface IEntitiyRepository<T> where T : class, IEntity, new()
+    public interface IEntityRepository<T> where T : class, IEntity, new()
     {
         public void Add(T entity);
         public void Update(T entity);

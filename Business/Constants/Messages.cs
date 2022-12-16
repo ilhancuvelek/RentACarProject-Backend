@@ -19,6 +19,13 @@ namespace Business.Constants
         public static string SuccessfulLogin = "başarılı giriş";
         public static string UserAlreadyExists = "kullanıcı mevcut";
         public static string AccessTokenCreated = "token oluştu";
+        public static string CarCountOfBrandError = "Markada limiti hatası";
+        public static string AddSingular = "eklendi.";
+        public static string UpdateSingular = " güncellendi.";
+        public static string DeleteSingular = " silindi.";
+        public static string NotExist = "bulunamadı";
+        public static string InvalidFileExtension = "Invalid file extension.";
+        public static string ImageNumberLimitExceeded = "The image limit for this car is full and new images cannot be added.";
         internal static string CarUpdated;
     }
 }
