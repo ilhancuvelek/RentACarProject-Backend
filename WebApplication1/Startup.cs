@@ -1,6 +1,8 @@
 using Autofac.Core;
 using Business.Abstract;
 using Business.Concrete;
+using Core.DependencyResolvers;
+using Core.Extensions;
 using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
@@ -41,7 +43,7 @@ namespace WebApplication1
             //services.AddSingleton<ICarService, CarManager>();
             //services.AddSingleton<ICarDal, EfCarDal>();
 
-            //jwt
+            //                                 JWT
             services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -60,7 +62,10 @@ namespace WebApplication1
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
-            ServiceTool.Create(services);
+            services.AddDepencencyResolvers(new ICoreModule[]
+           {
+                new CoreModule()
+           });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
