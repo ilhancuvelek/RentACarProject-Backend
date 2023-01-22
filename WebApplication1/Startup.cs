@@ -44,6 +44,9 @@ namespace WebApplication1
             //services.AddSingleton<ICarDal, EfCarDal>();
 
             //                                 JWT
+
+            services.AddCors();
+
             services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -75,6 +78,8 @@ namespace WebApplication1
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
